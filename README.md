@@ -48,7 +48,7 @@ Web2_TI6A_Kelompok1_FreshFlower
 
 ## 🚀 Cara Menjalankan Project
 
-### 1. Clone Repository
+### 1. Clone Repository (Masih dalam tahap penyusunan)
 
 ```bash
 git clone https://github.com/USERNAME/Web2_TI6A_Kelompok1_FreshFlower.git
@@ -66,7 +66,7 @@ Aktifkan:
 - Buat database dengan nama **fresh_flower**.
 - Import file **fresh_flower.sql** yang terdapat pada folder **database**.
 
-### 4. Jalankan Backend
+### 4. Jalankan Backend (Masih dalam tahap penyusunan)
 
 Masuk ke folder **backend** kemudian jalankan:
 
@@ -80,7 +80,7 @@ Backend akan berjalan pada:
 http://localhost:8080
 ```
 
-### 5. Jalankan Frontend
+### 5. Jalankan Frontend (Masih dalam tahap penyusunan)
 
 Buka folder **frontend** menggunakan browser atau melalui Local Server (Laragon/XAMPP).
 
@@ -119,7 +119,7 @@ Seluruh dokumentasi terdapat pada folder **docs**.
 
 ---
 
-## 🎨 Link Prototype (Figma)
+## 🎨 Link Prototype (Figma) (Masih dalam tahap penyusunan)
 
 Masukkan link Figma di sini:
 
@@ -129,7 +129,7 @@ https://...
 
 ---
 
-## 📋 Link Trello
+## 📋 Link Trello (Masih dalam tahap penyusunan)
 
 Masukkan link Trello di sini:
 
