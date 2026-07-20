@@ -51,7 +51,7 @@ Web2_TI6A_Kelompok1_FreshFlower
 ### 1. Clone Repository (Masih dalam tahap penyusunan)
 
 ```bash
-git clone https://github.com/USERNAME/Web2_TI6A_Kelompok1_FreshFlower.git
+git clone https://github.com/Alitaagniailma/Web2_TI6A_Kelompok1_FreshFlower
 ```
 
 ### 2. Jalankan XAMPP
