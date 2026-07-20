@@ -119,7 +119,7 @@ Seluruh dokumentasi terdapat pada folder **docs**.
 
 ---
 
-## 🎨 Link Prototype (Figma) (Masih dalam tahap penyusunan)
+## 🎨 Link Prototype (Figma) 
 
 Masukkan link Figma di sini:
 
