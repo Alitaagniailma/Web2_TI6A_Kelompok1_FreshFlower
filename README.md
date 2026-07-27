@@ -151,13 +151,6 @@ Balsamiq:
 
 https://balsamiq.cloud/spopkkn/pmf4jw
 
----
-
-# 📋 Project Management
-
-Trello:
-
-*(Tambahkan link Trello di sini)*
 
 ---
 
