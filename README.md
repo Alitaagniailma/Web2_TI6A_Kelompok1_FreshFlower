@@ -119,12 +119,12 @@ Seluruh dokumentasi terdapat pada folder **docs**.
 
 ---
 
-## 🎨 Link Prototype (Figma)
+## 🎨 Link Prototype (balsamiq)
 
 Masukkan link Figma di sini:
 
 ```
-https://...
+https://balsamiq.cloud/spopkkn/pmf4jw
 ```
 
 ---
