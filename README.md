@@ -1,11 +1,11 @@
 # 🌸 Fresh Flower
 ## Sistem Penjualan Bunga Segar Berbasis Web
 
-Fresh Flower merupakan aplikasi penjualan bunga berbasis web yang dikembangkan sebagai Project Akhir Mata Kuliah Pemrograman Web 2. Aplikasi ini menerapkan konsep Full-Stack Engineering dengan backend menggunakan CodeIgniter 4 (REST API), frontend terpisah, serta database MySQL.
+Fresh Flower merupakan aplikasi penjualan bunga berbasis web yang dikembangkan sebagai Project Akhir Mata Kuliah **Pemrograman Web 2**. Aplikasi ini dibangun menggunakan **PHP Native**, **HTML**, **CSS**, **JavaScript**, dan **MySQL** untuk memudahkan proses penjualan bunga secara online serta pengelolaan data oleh admin.
 
 ---
 
-## 👥 Anggota Kelompok
+# 👥 Anggota Kelompok
 
 | Nama | NIM | Role |
 |------|------|------|
@@ -17,142 +17,156 @@ Fresh Flower merupakan aplikasi penjualan bunga berbasis web yang dikembangkan s
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+# 🛠️ Teknologi yang Digunakan
 
-- CodeIgniter 4 (REST API)
+- PHP Native
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap 5
 - MySQL
 - Laragon
 - Git & GitHub
-- Postman
-- 
 
 ---
 
-## 📂 Struktur Repository
+# 📂 Struktur Repository
 
 ```
 Web2_TI6A_Kelompok1_FreshFlower
 │
-├── frontend/
-├── backend/
-├── database/
-├── docs/
-└── README.md
+├── admin/
+│   ├── kategori/
+│   ├── produk/
+│   ├── pesanan/
+│   ├── pembayaran/
+│   ├── pelanggan/
+│   └── laporan/
+│
+├── assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── components/
+│
+├── index.html
+├── katalog.html
+├── checkout.html
+├── login.html
+├── register.html
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## 🚀 Cara Menjalankan Project
+# 🚀 Cara Menjalankan Project
 
-### 1. Clone Repository
+## 1. Clone Repository
 
 ```bash
-git clone https://github.com/Alitaagniailma/Web2_TI6A_Kelompok1_FreshFlower
+git clone https://github.com/Alitaagniailma/Web2_TI6A_Kelompok1_FreshFlower.git
 ```
 
-### 2. Jalankan Laragon
+## 2. Jalankan Laragon
 
 Aktifkan:
+
 - Apache
 - MySQL
 
-### 3. Import Database
+## 3. Import Database
 
 - Buka phpMyAdmin.
-- Buat database dengan nama **fresh_flower**.
-- Import file **fresh_flower.sql** yang terdapat pada folder **database**.
+- Buat database **fresh_flower**.
+- Import file `fresh_flower.sql`.
 
-### 4. Jalankan Backend
+## 4. Konfigurasi Database
 
-Masuk ke folder **backend** kemudian jalankan:
-
-```bash
-php spark serve
-```
-
-Backend akan berjalan pada:
+Sesuaikan file:
 
 ```
-http://localhost:8080
+admin/koneksi.php
 ```
 
-### 5. Jalankan Frontend
+```php
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "fresh_flower";
+```
 
-Buka folder **frontend** menggunakan browser atau melalui Local Server (Laragon).
+## 5. Jalankan Project
+
+Buka browser:
+
+```
+http://localhost/freshflower
+```
 
 ---
 
-## 📌 Fitur Sistem
+# 📌 Fitur Sistem
 
-### Admin
+## Admin
+
 - Login Admin
-- Kelola Produk
-- Kelola Kategori
-- Kelola Pesanan
-- Kelola Data Pelanggan
+- Dashboard
+- CRUD Produk
+- CRUD Kategori
+- Manajemen Pesanan
+- Verifikasi Pembayaran
+- Data Pelanggan
+- Laporan Penjualan
 
-### Pelanggan
+## Pelanggan
+
 - Registrasi
 - Login
 - Melihat Produk
 - Detail Produk
-- Melakukan Pemesanan
+- Keranjang Belanja
 - Checkout
-- Melihat Riwayat Pesanan
+- Tracking Pesanan
+- Riwayat Pesanan
 
 ---
 
-## 📄 Dokumentasi
+# 📸 Tampilan Aplikasi
 
-- Use Case Diagram
-- Activity Diagram
-- ERD
-- Logbook
-- SRS
-- Postman Collection
+Tambahkan screenshot pada bagian berikut.
 
-Seluruh dokumentasi terdapat pada folder **docs**.
+| Halaman | Preview |
+|---------|---------|
+| Home | *(Screenshot)* |
+| Katalog | *(Screenshot)* |
+| Detail Produk | *(Screenshot)* |
+| Dashboard Admin | *(Screenshot)* |
 
 ---
 
-## 🎨 Link Prototype (balsamiq)
+# 🎨 Prototype
 
-Masukkan link Figma di sini:
+Balsamiq:
 
-```
 https://balsamiq.cloud/spopkkn/pmf4jw
-```
 
 ---
 
-## 📋 Link Trello
+# 📋 Project Management
 
-Masukkan link Trello di sini:
+Trello:
 
-```
-https://...
-```
+*(Tambahkan link Trello di sini)*
 
 ---
 
-## 📬 Postman Collection
+# 📌 Status Project
 
-Tersedia pada folder **docs**.
-
----
-
-## 📌 Status Project
-
-🟡 Dalam proses pengembangan.
-
-Beberapa fitur utama masih dalam tahap implementasi dan akan terus disempurnakan sesuai kebutuhan proyek mata kuliah Pemrograman Web 2.
+🟢 Selesai (Project Mata Kuliah Pemrograman Web 2)
 
 ---
 
-## 📖 Lisensi
+# 📖 Lisensi
 
-Project ini dibuat untuk keperluan akademik sebagai tugas Mata Kuliah Pemrograman Web 2 Program Studi Teknik Informatika Universitas Mandiri.
+Project ini dibuat untuk keperluan akademik sebagai tugas Mata Kuliah **Pemrograman Web 2** Program Studi Teknik Informatika Universitas Mandiri.
