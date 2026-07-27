@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pesanan - FreshFlower</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- =========================
+             SIDEBAR USER
+        ========================== -->
+
+        <div class="sidebar">
+
+            <div class="logo">
+                FreshFlower
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        <i class="bi bi-house-fill"></i> Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="katalog.html">
+                        <i class="bi bi-grid-fill"></i> Katalog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="keranjang.html">
+                        <i class="bi bi-cart-fill"></i> Keranjang
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pesanan.html">
+                        <i class="bi bi-box-fill"></i> Pesanan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pelacakan.html">
+                        <i class="bi bi-truck"></i> Pelacakan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <i class="bi bi-person-fill"></i> Login
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <div class="content">
+
+            <section class="order-section">
+
+                <h1>Pesanan Saya 📦</h1>
+
+                <p class="order-subtitle">
+                    Lihat dan periksa pesanan bunga yang sudah kamu buat.
+                </p>
+
+
+                <!-- TEMPAT PESANAN -->
+
+                <div
+                    class="order-container"
+                    id="orderContainer"
+                >
+
+                    <!-- Pesanan akan dibuat otomatis oleh JavaScript -->
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   AMBIL DATA PESANAN
+========================= */
+
+let daftarPesanan =
+    JSON.parse(
+        localStorage.getItem('freshFlowerOrders')
+    ) || [];
+
+
+/* =========================
+   FORMAT RUPIAH
+========================= */
+
+function formatRupiah(angka) {
+
+    return 'Rp' + angka.toLocaleString('id-ID');
+
+}
+
+
+/* =========================
+   TAMPILKAN PESANAN
+========================= */
+
+function tampilkanPesanan() {
+
+    const orderContainer =
+        document.getElementById('orderContainer');
+
+
+    /* =========================
+       JIKA BELUM ADA PESANAN
+    ========================== */
+
+    if (daftarPesanan.length === 0) {
+
+        orderContainer.innerHTML = `
+
+            <div class="order-card">
+
+                <div style="text-align:center; padding:30px;">
+
+                    <i
+                        class="bi bi-box-seam"
+                        style="font-size:50px; color:#88B18A;"
+                    ></i>
+
+                    <h2>
+                        Belum Ada Pesanan
+                    </h2>
+
+                    <p>
+                        Kamu belum memiliki pesanan.
+                        Yuk pilih bunga favoritmu!
+                    </p>
+
+                    <a
+                        href="katalog.html"
+                        class="detail-btn"
+                    >
+                        <i class="bi bi-grid"></i>
+                        Lihat Katalog
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* =========================
+       KOSONGKAN CONTAINER
+    ========================== */
+
+    orderContainer.innerHTML = '';
+
+
+    /* =========================
+       PESANAN TERBARU DI ATAS
+    ========================== */
+
+    const pesananUrut =
+        [...daftarPesanan].reverse();
+
+
+    pesananUrut.forEach((pesanan, index) => {
+
+
+        /* =========================
+           PRODUK
+        ========================== */
+
+        let produkHTML = '';
+
+
+        pesanan.produk.forEach(product => {
+
+            const totalProduk =
+                product.price *
+                product.quantity;
+
+
+            produkHTML += `
+
+                <div class="order-product">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                    <div>
+
+                        <h3>
+                            ${product.name}
+                        </h3>
+
+                        <p>
+                            ${product.quantity}
+                            ×
+                            ${formatRupiah(product.price)}
+                        </p>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        /* =========================
+           STATUS CLASS
+        ========================== */
+
+        let statusClass = 'waiting';
+
+
+        if (pesanan.status === 'Diproses') {
+
+            statusClass = 'process';
+
+        }
+
+
+        if (pesanan.status === 'Selesai') {
+
+            statusClass = 'done';
+
+        }
+
+
+        /* =========================
+           BUAT CARD PESANAN
+        ========================== */
+
+        const orderCard =
+            document.createElement('div');
+
+
+        orderCard.className =
+            'order-card';
+
+
+        orderCard.innerHTML = `
+
+            <div class="order-header">
+
+                <div>
+
+                    <strong>
+                        Pesanan #${pesanan.id}
+                    </strong>
+
+                    <small>
+                        ${pesanan.tanggal}
+                    </small>
+
+                </div>
+
+
+                <span
+                    class="order-status ${statusClass}"
+                >
+                    ${pesanan.status}
+                </span>
+
+            </div>
+
+
+            <div class="order-products">
+
+                ${produkHTML}
+
+            </div>
+
+
+            <div class="order-footer">
+
+                <div>
+
+                    <span>
+                        Total Pesanan
+                    </span>
+
+                    <strong>
+                        ${formatRupiah(pesanan.total)}
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="detail-btn"
+                    onclick="lihatDetail(${index})"
+                >
+                    Lihat Detail
+                </button>
+
+            </div>
+
+        `;
+
+
+        orderContainer.appendChild(
+            orderCard
+        );
+
+    });
+
+}
+
+
+/* =========================
+   LIHAT DETAIL
+========================= */
+
+function lihatDetail(index) {
+
+    const pesanan =
+        [...daftarPesanan].reverse()[index];
+
+
+    /* Simpan pesanan yang dipilih */
+
+    localStorage.setItem(
+        'freshFlowerSelectedOrder',
+        JSON.stringify(pesanan)
+    );
+
+
+    /* Pindah ke detail pesanan */
+
+    window.location.href =
+        'detail-pesanan.html';
+
+}
+
+
+/* =========================
+   JALANKAN
+========================= */
+
+tampilkanPesanan();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keranjang - FreshFlower</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+
+        <!-- =========================
+             SIDEBAR — USER
+        ========================== -->
+
+        <div class="sidebar">
+
+            <div class="logo">
+                FreshFlower
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        <i class="bi bi-house-fill"></i> Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="katalog.html">
+                        <i class="bi bi-grid-fill"></i> Katalog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="keranjang.html">
+                        <i class="bi bi-cart-fill"></i> Keranjang
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pesanan.html">
+                        <i class="bi bi-box-fill"></i> Pesanan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pelacakan.html">
+                        <i class="bi bi-truck"></i> Pelacakan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <i class="bi bi-person-fill"></i> Login
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <div class="content">
+
+            <section class="cart-section">
+
+                <h1>Keranjang Belanja 🛒</h1>
+
+                <p class="cart-subtitle">
+                    Periksa kembali bunga yang ingin kamu pesan.
+                </p>
+
+
+                <!-- TEMPAT PRODUK KERANJANG -->
+
+                <div class="cart-container" id="cartContainer">
+
+                    <!-- Produk akan dibuat otomatis oleh JavaScript -->
+
+                </div>
+
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   KERANJANG
+========================= */
+
+let cart =
+    JSON.parse(localStorage.getItem('freshFlowerCart')) || [];
+
+
+/* =========================
+   FORMAT RUPIAH
+========================= */
+
+function formatRupiah(angka) {
+
+    return 'Rp' + angka.toLocaleString('id-ID');
+
+}
+
+
+/* =========================
+   TAMPILKAN KERANJANG
+========================= */
+
+function tampilkanKeranjang() {
+
+    const cartContainer =
+        document.getElementById('cartContainer');
+
+
+    /* Jika keranjang kosong */
+
+    if (cart.length === 0) {
+
+        cartContainer.innerHTML = `
+
+            <div class="cart-summary">
+
+                <h2>Keranjang Masih Kosong 🛒</h2>
+
+                <p>
+                    Yuk pilih bunga favoritmu terlebih dahulu.
+                </p>
+
+                <a href="katalog.html" class="checkout-btn">
+                    Kembali ke Katalog
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    let subtotal = 0;
+
+
+    /* Kosongkan container */
+
+    cartContainer.innerHTML = '';
+
+
+    /* =========================
+       PRODUK
+    ========================= */
+
+    cart.forEach((product, index) => {
+
+        const totalProduk =
+            product.price * product.quantity;
+
+
+        subtotal += totalProduk;
+
+
+        const item = document.createElement('div');
+
+        item.className = 'cart-item';
+
+
+        item.innerHTML = `
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+            >
+
+
+            <div class="cart-info">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <p class="cart-price">
+                    ${formatRupiah(product.price)}
+                </p>
+
+
+                <div class="quantity">
+
+                    <button
+                        type="button"
+                        onclick="kurangiJumlah(${index})"
+                    >
+                        −
+                    </button>
+
+
+                    <span>
+                        ${product.quantity}
+                    </span>
+
+
+                    <button
+                        type="button"
+                        onclick="tambahJumlah(${index})"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="cart-total">
+
+                <strong>
+                    ${formatRupiah(totalProduk)}
+                </strong>
+
+
+                <button
+                    type="button"
+                    class="delete-cart"
+                    onclick="hapusProduk(${index})"
+                >
+
+                    <i class="bi bi-trash"></i>
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        cartContainer.appendChild(item);
+
+    });
+
+
+    /* =========================
+       ONGKIR
+    ========================= */
+
+    const ongkir = 15000;
+
+    const total = subtotal + ongkir;
+
+
+    /* =========================
+       RINGKASAN
+    ========================= */
+
+    const summary =
+        document.createElement('div');
+
+    summary.className = 'cart-summary';
+
+
+    summary.innerHTML = `
+
+        <h2>
+            Ringkasan Pesanan
+        </h2>
+
+
+        <div class="summary-row">
+
+            <span>
+                Subtotal
+            </span>
+
+            <strong>
+                ${formatRupiah(subtotal)}
+            </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Ongkos Kirim
+            </span>
+
+            <strong>
+                ${formatRupiah(ongkir)}
+            </strong>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="summary-row total">
+
+            <span>
+                Total
+            </span>
+
+            <strong>
+                ${formatRupiah(total)}
+            </strong>
+
+        </div>
+
+
+        <a
+            href="checkout.html"
+            class="checkout-btn"
+        >
+            Lanjut ke Checkout
+        </a>
+
+    `;
+
+
+    cartContainer.appendChild(summary);
+
+}
+
+
+/* =========================
+   TAMBAH JUMLAH
+========================= */
+
+function tambahJumlah(index) {
+
+    cart[index].quantity += 1;
+
+    simpanKeranjang();
+
+}
+
+
+/* =========================
+   KURANGI JUMLAH
+========================= */
+
+function kurangiJumlah(index) {
+
+    if (cart[index].quantity > 1) {
+
+        cart[index].quantity -= 1;
+
+    } else {
+
+        // Jika jumlah sudah 1,
+        // jangan dibuat 0
+
+        cart[index].quantity = 1;
+
+    }
+
+    simpanKeranjang();
+
+}
+
+
+/* =========================
+   HAPUS PRODUK
+========================= */
+
+function hapusProduk(index) {
+
+    const yakin =
+        confirm('Hapus produk ini dari keranjang?');
+
+
+    if (!yakin) {
+
+        return;
+
+    }
+
+
+    cart.splice(index, 1);
+
+    simpanKeranjang();
+
+}
+
+
+/* =========================
+   SIMPAN KERANJANG
+========================= */
+
+function simpanKeranjang() {
+
+    localStorage.setItem(
+        'freshFlowerCart',
+        JSON.stringify(cart)
+    );
+
+
+    tampilkanKeranjang();
+
+}
+
+
+/* =========================
+   JALANKAN
+========================= */
+
+tampilkanKeranjang();
+
+</script>
+
+
+</body>
+
+</html>

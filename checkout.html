@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - FreshFlower</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- =========================
+             SIDEBAR USER
+        ========================== -->
+
+        <div class="sidebar">
+
+            <div class="logo">
+                FreshFlower
+            </div>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        <i class="bi bi-house-fill"></i> Beranda
+                    </a>
+                </li>
+
+                <li>
+                    <a href="katalog.html">
+                        <i class="bi bi-grid-fill"></i> Katalog
+                    </a>
+                </li>
+
+                <li>
+                    <a href="keranjang.html">
+                        <i class="bi bi-cart-fill"></i> Keranjang
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pesanan.html">
+                        <i class="bi bi-box-fill"></i> Pesanan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="pelacakan.html">
+                        <i class="bi bi-truck"></i> Pelacakan
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.html">
+                        <i class="bi bi-person-fill"></i> Login
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <div class="content">
+
+            <section class="checkout-section">
+
+                <h1>Checkout 🌷</h1>
+
+                <p class="checkout-subtitle">
+                    Lengkapi informasi pengiriman sebelum membuat pesanan.
+                </p>
+
+
+                <div class="checkout-container">
+
+
+                    <!-- =========================
+                         DATA PENGIRIMAN
+                    ========================== -->
+
+                    <div class="checkout-form">
+
+                        <h2>Data Pengiriman</h2>
+
+
+                        <div class="form-group">
+
+                            <label for="nama">
+                                Nama Lengkap
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nama"
+                                placeholder="Masukkan nama lengkap"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="telepon">
+                                Nomor Telepon
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telepon"
+                                placeholder="08xxxxxxxxxx"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="alamat">
+                                Alamat Lengkap
+                            </label>
+
+                            <textarea
+                                id="alamat"
+                                rows="4"
+                                placeholder="Masukkan alamat lengkap pengiriman"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="catatan">
+                                Catatan Pesanan
+                            </label>
+
+                            <textarea
+                                id="catatan"
+                                rows="3"
+                                placeholder="Contoh: Tolong kirim sore hari"
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- METODE PEMBAYARAN -->
+
+                        <h2 class="payment-title">
+                            Metode Pembayaran
+                        </h2>
+
+
+                        <div class="payment-option">
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="transfer"
+                                    checked
+                                >
+
+                                <i class="bi bi-bank"></i>
+
+                                Transfer Bank
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="payment-option">
+
+                            <label>
+
+                                <input
+                                    type="radio"
+                                    name="payment"
+                                    value="cod"
+                                >
+
+                                <i class="bi bi-cash"></i>
+
+                                COD
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                         RINGKASAN PESANAN
+                    ========================== -->
+
+                    <div class="checkout-summary">
+
+                        <h2>Ringkasan Pesanan</h2>
+
+
+                        <!-- PRODUK DARI KERANJANG -->
+
+                        <div id="checkoutProducts">
+
+                            <!-- Diisi oleh JavaScript -->
+
+                        </div>
+
+
+                        <hr>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Subtotal
+                            </span>
+
+                            <strong id="checkoutSubtotal">
+                                Rp0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Ongkos Kirim
+                            </span>
+
+                            <strong id="checkoutOngkir">
+                                Rp15.000
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row total">
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="checkoutTotal">
+                                Rp15.000
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="order-btn"
+                            id="btnBuatPesanan"
+                        >
+                            Buat Pesanan
+                        </button>
+
+
+                        <a
+                            href="keranjang.html"
+                            class="back-cart"
+                        >
+                            ← Kembali ke Keranjang
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   DATA KERANJANG
+========================= */
+
+let cart =
+    JSON.parse(localStorage.getItem('freshFlowerCart')) || [];
+
+
+/* =========================
+   FORMAT RUPIAH
+========================= */
+
+function formatRupiah(angka) {
+
+    return 'Rp' + angka.toLocaleString('id-ID');
+
+}
+
+
+/* =========================
+   TAMPILKAN PRODUK CHECKOUT
+========================= */
+
+function tampilkanCheckout() {
+
+    const checkoutProducts =
+        document.getElementById('checkoutProducts');
+
+    const subtotalElement =
+        document.getElementById('checkoutSubtotal');
+
+    const ongkirElement =
+        document.getElementById('checkoutOngkir');
+
+    const totalElement =
+        document.getElementById('checkoutTotal');
+
+
+    /* =========================
+       CEK KERANJANG KOSONG
+    ========================= */
+
+    if (cart.length === 0) {
+
+        checkoutProducts.innerHTML = `
+
+            <p style="color:#777;">
+                Keranjang masih kosong.
+            </p>
+
+            <a
+                href="katalog.html"
+                class="back-cart"
+            >
+                ← Kembali ke Katalog
+            </a>
+
+        `;
+
+        subtotalElement.textContent = 'Rp0';
+
+        ongkirElement.textContent = 'Rp0';
+
+        totalElement.textContent = 'Rp0';
+
+        return;
+
+    }
+
+
+    /* =========================
+       TAMPILKAN PRODUK
+    ========================= */
+
+    checkoutProducts.innerHTML = '';
+
+
+    let subtotal = 0;
+
+
+    cart.forEach(product => {
+
+        const totalProduk =
+            product.price * product.quantity;
+
+
+        subtotal += totalProduk;
+
+
+        const productElement =
+            document.createElement('div');
+
+
+        productElement.className =
+            'checkout-product';
+
+
+        productElement.innerHTML = `
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+            >
+
+            <div>
+
+                <h4>
+                    ${product.name}
+                </h4>
+
+                <p>
+                    ${product.quantity} ×
+                    ${formatRupiah(product.price)}
+                </p>
+
+            </div>
+
+        `;
+
+
+        checkoutProducts.appendChild(
+            productElement
+        );
+
+    });
+
+
+    /* =========================
+       HITUNG TOTAL
+    ========================= */
+
+    const ongkir = 15000;
+
+    const total = subtotal + ongkir;
+
+
+    subtotalElement.textContent =
+        formatRupiah(subtotal);
+
+
+    ongkirElement.textContent =
+        formatRupiah(ongkir);
+
+
+    totalElement.textContent =
+        formatRupiah(total);
+
+}
+
+
+/* =========================
+   BUAT PESANAN
+========================= */
+
+document
+    .getElementById('btnBuatPesanan')
+    .addEventListener('click', function () {
+
+
+        /* =========================
+           CEK KERANJANG
+        ========================= */
+
+        if (cart.length === 0) {
+
+            alert(
+                'Keranjang masih kosong!'
+            );
+
+            return;
+
+        }
+
+
+        /* =========================
+           AMBIL DATA FORM
+        ========================= */
+
+        const nama =
+            document.getElementById('nama').value.trim();
+
+
+        const telepon =
+            document.getElementById('telepon').value.trim();
+
+
+        const alamat =
+            document.getElementById('alamat').value.trim();
+
+
+        const catatan =
+            document.getElementById('catatan').value.trim();
+
+
+        const payment =
+            document.querySelector(
+                'input[name="payment"]:checked'
+            ).value;
+
+
+        /* =========================
+           VALIDASI
+        ========================= */
+
+        if (
+            nama === '' ||
+            telepon === '' ||
+            alamat === ''
+        ) {
+
+            alert(
+                'Nama, nomor telepon, dan alamat wajib diisi!'
+            );
+
+            return;
+
+        }
+
+
+        /* =========================
+           HITUNG TOTAL
+        ========================= */
+
+        let subtotal = 0;
+
+
+        cart.forEach(product => {
+
+            subtotal +=
+                product.price *
+                product.quantity;
+
+        });
+
+
+        const ongkir = 15000;
+
+        const total =
+            subtotal + ongkir;
+
+
+        /* =========================
+           NOMOR PESANAN
+        ========================= */
+
+        const nomorPesanan =
+            'FF-' +
+            Date.now();
+
+
+        /* =========================
+           BUAT DATA PESANAN
+        ========================= */
+
+        const pesananBaru = {
+
+            id: nomorPesanan,
+
+            tanggal:
+                new Date().toLocaleString(
+                    'id-ID'
+                ),
+
+            nama: nama,
+
+            telepon: telepon,
+
+            alamat: alamat,
+
+            catatan: catatan,
+
+            pembayaran: payment,
+
+            produk: cart,
+
+            subtotal: subtotal,
+
+            ongkir: ongkir,
+
+            total: total,
+
+            status: 'Menunggu Pembayaran'
+
+        };
+
+
+        /* =========================
+           AMBIL PESANAN LAMA
+        ========================= */
+
+        let daftarPesanan =
+            JSON.parse(
+                localStorage.getItem(
+                    'freshFlowerOrders'
+                )
+            ) || [];
+
+
+        /* =========================
+           TAMBAHKAN PESANAN
+        ========================= */
+
+        daftarPesanan.push(
+            pesananBaru
+        );
+
+
+        /* =========================
+           SIMPAN PESANAN
+        ========================= */
+
+        localStorage.setItem(
+            'freshFlowerOrders',
+            JSON.stringify(
+                daftarPesanan
+            )
+        );
+
+
+        /* =========================
+           KOSONGKAN KERANJANG
+        ========================= */
+
+        localStorage.removeItem(
+            'freshFlowerCart'
+        );
+
+
+        /* =========================
+           NOTIFIKASI
+        ========================= */
+
+        alert(
+            'Pesanan berhasil dibuat! Nomor pesanan: ' +
+            nomorPesanan
+        );
+
+
+        /* =========================
+           PINDAH KE PESANAN
+        ========================= */
+
+        window.location.href =
+            'pesanan.html';
+
+    });
+
+
+/* =========================
+   JALANKAN
+========================= */
+
+tampilkanCheckout();
+
+</script>
+
+
+</body>
+</html>

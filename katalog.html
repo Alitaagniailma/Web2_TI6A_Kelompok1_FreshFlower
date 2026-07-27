@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FreshFlower</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+         FreshFlower
+    </div>
+
+        <ul>
+        <li>
+            <a href="index.html">
+                <i class="bi bi-house-fill"></i> Beranda
+            </a>
+        </li>
+
+        <li>
+            <a href="katalog.html">
+                <i class="bi bi-grid-fill"></i> Katalog
+            </a>
+        </li>
+
+        <li>
+            <a href="keranjang.html">
+                <i class="bi bi-cart-fill"></i> Keranjang
+            </a>
+        </li>
+
+        <li>
+            <a href="pesanan.html">
+                <i class="bi bi-box-fill"></i> Pesanan
+            </a>
+        </li>
+
+        <li>
+            <a href="pelacakan.html">
+                <i class="bi bi-truck"></i> Pelacakan
+            </a>
+        </li>
+
+        <li>
+            <a href="login.html">
+                <i class="bi bi-person-fill"></i> Login
+            </a>
+        </li>
+    </ul>
+
+</div>
+
+<!-- Content -->
+<div class="content">
+
+<!-- Header -->
+<section class="page-title">
+
+    <h1>Katalog Produk</h1>
+
+    <p>
+        Pilih rangkaian bunga favorit untuk setiap momen spesial.
+    </p>
+
+</section>
+
+<!-- Search -->
+<section class="search-box">
+
+    <input type="text" placeholder="Cari bunga...">
+
+    <button>
+        <i class="bi bi-search"></i>
+    </button>
+
+</section>
+
+<!-- Filter -->
+
+<section class="filter">
+
+    <button class="active">Semua</button>
+    <button>Bouquet</button>
+    <button>Wedding</button>
+    <button>Graduation</button>
+    <button>Gift Box</button>
+
+</section>
+
+<!-- Produk -->
+
+<section class="products">
+
+    <h2>Produk Terlaris</h2>
+
+    <div class="product-list">
+
+        <!-- ROSE -->
+
+        <div class="product-card" data-category="Bouquet">
+
+            <img
+                src="assets/images/produk/rose.jpg"
+                alt="Rose Bouquet"
+            >
+
+            <h4>Rose Bouquet</h4>
+
+            <p class="price">
+                Rp150.000
+            </p>
+
+            <p class="desc">
+                Buket mawar merah segar untuk hadiah spesial.
+            </p>
+
+            <div class="product-button">
+
+                <a
+                    href="detail.html"
+                    class="btn-detail"
+                >
+                    Detail
+                </a>
+
+                <button
+                    type="button"
+                    class="btn-cart"
+                    data-name="Rose Bouquet"
+                    data-price="150000"
+                    data-image="assets/images/produk/rose.jpg"
+                >
+                    <i class="bi bi-cart-plus"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- TULIP -->
+
+        <div class="product-card" data-category="Wedding">
+
+            <img
+                src="assets/images/produk/tulip.jpg"
+                alt="Tulip Bouquet"
+            >
+
+            <h4>Tulip Bouquet</h4>
+
+            <p class="price">
+                Rp175.000
+            </p>
+
+            <p class="desc">
+                Buket tulip dengan nuansa elegan dan modern.
+            </p>
+
+            <div class="product-button">
+
+                <a
+                    href="detail.html"
+                    class="btn-detail"
+                >
+                    Detail
+                </a>
+
+                <button
+                    type="button"
+                    class="btn-cart"
+                    data-name="Tulip Bouquet"
+                    data-price="175000"
+                    data-image="assets/images/produk/tulip.jpg"
+                >
+                    <i class="bi bi-cart-plus"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUNFLOWER -->
+
+        <div class="product-card" data-category="Graduation">
+
+            <img
+                src="assets/images/produk/sunflower.jpg"
+                alt="Sunflower Bouquet"
+            >
+
+            <h4>Sunflower Bouquet</h4>
+
+            <p class="price">
+                Rp165.000
+            </p>
+
+            <p class="desc">
+                Buket bunga matahari yang ceria dan hangat.
+            </p>
+
+            <div class="product-button">
+
+                <a
+                    href="detail.html"
+                    class="btn-detail"
+                >
+                    Detail
+                </a>
+
+                <button
+                    type="button"
+                    class="btn-cart"
+                    data-name="Sunflower Bouquet"
+                    data-price="165000"
+                    data-image="assets/images/produk/sunflower.jpg"
+                >
+                    <i class="bi bi-cart-plus"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-about">
+
+            <h3>FreshFlower</h3>
+
+            <p>
+                FreshFlower merupakan toko bunga yang menyediakan berbagai rangkaian bunga segar untuk hadiah, wisuda, ulang tahun, pernikahan, dan berbagai momen spesial lainnya.
+            </p>
+
+        </div>
+
+        <div class="footer-contact">
+
+            <h4>Kontak</h4>
+
+            <p>
+                <i class="bi bi-geo-alt-fill"></i>
+                Subang, Jawa Barat
+            </p>
+
+            <p>
+                <i class="bi bi-telephone-fill"></i>
+                0812-3456-7890
+            </p>
+
+            <p>
+                <i class="bi bi-envelope-fill"></i>
+                freshflower@gmail.com
+            </p>
+
+        </div>
+
+        <div class="footer-social">
+
+            <h4>Ikuti Kami</h4>
+
+            <p>
+                <i class="bi bi-instagram"></i>
+                @freshflower.id
+            </p>
+
+            <p>
+                <i class="bi bi-facebook"></i>
+                FreshFlower
+            </p>
+
+            <p>
+                <i class="bi bi-whatsapp"></i>
+                0812-3456-7890
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 FreshFlower | All Rights Reserved
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   FILTER + SEARCH PRODUK
+========================= */
+
+const filterButtons = document.querySelectorAll('.filter button');
+const products = document.querySelectorAll('.product-card');
+
+const searchInput = document.querySelector('.search-box input');
+const searchButton = document.querySelector('.search-box button');
+
+let selectedCategory = 'Semua';
+
+
+/* =========================
+   FILTER KATEGORI
+========================= */
+
+filterButtons.forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        // Hapus status aktif dari semua tombol
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Aktifkan tombol yang dipilih
+        this.classList.add('active');
+
+        // Simpan kategori yang dipilih
+        selectedCategory = this.textContent.trim();
+
+        // Tampilkan produk
+        tampilkanProduk();
+
+    });
+
+});
+
+
+/* =========================
+   FILTER + SEARCH
+========================= */
+
+function tampilkanProduk() {
+
+    const keyword =
+        searchInput.value.toLowerCase().trim();
+
+
+    products.forEach(product => {
+
+        // Nama produk
+        const productName =
+            product.querySelector('h4')
+            .textContent
+            .toLowerCase();
+
+
+        // Kategori produk
+        const category =
+            product.dataset.category
+            .toLowerCase();
+
+
+        // Apakah nama bunga cocok dengan pencarian?
+        const cocokNama =
+            productName.includes(keyword);
+
+
+        // Apakah kategori/tema cocok dengan pencarian?
+        const cocokTema =
+            category.includes(keyword);
+
+
+        // Apakah produk sesuai tombol kategori?
+        const cocokKategori =
+            selectedCategory === 'Semua' ||
+            category === selectedCategory.toLowerCase();
+
+
+        // Jika pencarian kosong,
+        // semua nama/kategori dianggap cocok
+        const cocokSearch =
+            keyword === '' ||
+            cocokNama ||
+            cocokTema;
+
+
+        // Tampilkan produk
+        if (cocokSearch && cocokKategori) {
+
+            product.style.display = 'block';
+
+        } else {
+
+            product.style.display = 'none';
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   KLIK TOMBOL SEARCH
+========================= */
+
+searchButton.addEventListener('click', function () {
+
+    tampilkanProduk();
+
+});
+
+
+/* =========================
+   TEKAN ENTER
+========================= */
+
+searchInput.addEventListener('keyup', function(event) {
+
+    if (event.key === 'Enter') {
+
+        tampilkanProduk();
+
+    }
+
+});
+
+</script>
+
+<script>
+
+/* =========================
+   TAMBAH KE KERANJANG
+========================= */
+
+const cartButtons = document.querySelectorAll('.btn-cart');
+
+cartButtons.forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        // Ambil data produk dari tombol
+        const name = this.dataset.name;
+        const price = Number(this.dataset.price);
+        const image = this.dataset.image;
+
+        // Ambil keranjang yang sudah tersimpan
+        let cart = JSON.parse(
+            localStorage.getItem('freshFlowerCart')
+        ) || [];
+
+
+        // Cek apakah produk sudah ada
+        const existingProduct = cart.find(
+            item => item.name === name
+        );
+
+
+        if (existingProduct) {
+
+            // Kalau sudah ada, tambah jumlah
+            existingProduct.quantity += 1;
+
+        } else {
+
+            // Kalau belum ada, tambahkan produk baru
+            cart.push({
+
+                name: name,
+                price: price,
+                image: image,
+                quantity: 1
+
+            });
+
+        }
+
+
+        // Simpan kembali ke localStorage
+        localStorage.setItem(
+            'freshFlowerCart',
+            JSON.stringify(cart)
+        );
+
+
+        // Beri tanda berhasil
+        alert(name + ' berhasil ditambahkan ke keranjang!');
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
