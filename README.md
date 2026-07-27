@@ -161,11 +161,6 @@ Trello:
 
 ---
 
-# 📌 Status Project
-
-🟢 Selesai (Project Mata Kuliah Pemrograman Web 2)
-
----
 
 # 📖 Lisensi
 
