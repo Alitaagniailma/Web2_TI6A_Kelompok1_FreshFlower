@@ -134,8 +134,6 @@ http://localhost/freshflower
 
 # 📸 Tampilan Aplikasi
 
-Tambahkan screenshot pada bagian berikut.
-
 | Halaman | Preview |
 |---------|---------|
 | Home | *<img width="960" height="504" alt="dashboard" src="https://github.com/user-attachments/assets/9690fe06-0eca-459d-baae-410e7a62ee1e" />
@@ -144,8 +142,8 @@ Tambahkan screenshot pada bagian berikut.
 * |
 | Detail Produk | * <img width="960" height="504" alt="detailproduk" src="https://github.com/user-attachments/assets/82aa79f4-c000-47f9-8b55-c533adccf082" />
 * |
-| Dashboard Admin | *![Uploading dashboardAdmin.png…]()
-* |
+| Dashboard Admin | *<img width="960" height="504" alt="dashboardAdmin" src="https://github.com/user-attachments/assets/1d28000c-3b60-42a8-ad8a-fdedaea59807" />
+*|
 
 ---
 
