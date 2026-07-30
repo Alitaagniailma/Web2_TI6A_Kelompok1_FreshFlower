@@ -134,16 +134,12 @@ http://localhost/freshflower
 
 # 📸 Tampilan Aplikasi
 
-| Halaman | Preview |
-|---------|---------|
-| Home | *<img width="960" height="504" alt="dashboard" src="https://github.com/user-attachments/assets/9690fe06-0eca-459d-baae-410e7a62ee1e" />
-* |
-| Katalog | *<img width="960" height="504" alt="katalog" src="https://github.com/user-attachments/assets/b3f0725d-a8ae-4cc6-a68f-3b27a8e1183e" />
-* |
-| Detail Produk | * <img width="960" height="504" alt="detailproduk" src="https://github.com/user-attachments/assets/82aa79f4-c000-47f9-8b55-c533adccf082" />
-* |
-| Dashboard Admin | *<img width="960" height="504" alt="dashboardAdmin" src="https://github.com/user-attachments/assets/1d28000c-3b60-42a8-ad8a-fdedaea59807" />
-*|
+| Halaman         | Preview                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Home            | <img src="https://github.com/user-attachments/assets/9690fe06-0eca-459d-baae-410e7a62ee1e" alt="dashboard" width="600">      |
+| Katalog         | <img src="https://github.com/user-attachments/assets/b3f0725d-a8ae-4cc6-a68f-3b27a8e1183e" alt="katalog" width="600">        |
+| Detail Produk   | <img src="https://github.com/user-attachments/assets/82aa79f4-c000-47f9-8b55-c533adccf082" alt="detailproduk" width="600">   |
+| Dashboard Admin | <img src="https://github.com/user-attachments/assets/1d28000c-3b60-42a8-ad8a-fdedaea59807" alt="dashboardAdmin" width="600"> |
 
 ---
 
