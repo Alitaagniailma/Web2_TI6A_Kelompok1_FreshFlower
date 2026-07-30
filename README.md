@@ -138,7 +138,8 @@ Tambahkan screenshot pada bagian berikut.
 
 | Halaman | Preview |
 |---------|---------|
-| Home | *(Screenshot)* |
+| Home | *<img width="960" height="504" alt="dashboard" src="https://github.com/user-attachments/assets/9690fe06-0eca-459d-baae-410e7a62ee1e" />
+* |
 | Katalog | *(Screenshot)* |
 | Detail Produk | *(Screenshot)* |
 | Dashboard Admin | *(Screenshot)* |
